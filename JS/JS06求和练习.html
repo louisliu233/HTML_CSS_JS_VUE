@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sum = 0;
+        var even = 0;
+        var odd = 0;
+        var thir = 0;
+        for (var i = 1; i <= 100; ++i) {
+            // sum = sum + i;
+            sum += i;
+        }
+        for (var i = 1; i <= 100; ++i) {
+            if (i % 2 == 0) {
+                even += i;
+            } else {
+                odd += i;
+            }
+        }
+        for (var i = 1; i <= 100; ++i) {
+            if (i % 3 == 0) {
+                thir += i;
+            }
+        }
+        alert('1加到100的值是:' + sum);
+        alert('1到100的偶数的和是:' + even);
+        alert('1到100的奇数的和是:' + odd);
+        alert('1到100里能被三整除的数的和是:' + thir);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

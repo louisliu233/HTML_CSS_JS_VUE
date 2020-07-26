@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [2, 3, 1, 7, 4];
+        var sum = 0;
+        var average = 0;
+        var max = arr[0];
+        var art = [];
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        for (i = 0; i < 100; i++) {
+            art[i] = i + 1;
+        }
+        average = sum / arr.length;
+        console.log('数组的和' + sum, average, max);
+        console.log(art);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

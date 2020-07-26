@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getMax(num1, num2) {
+            // if (num1 > num2) {
+            //     return num1;
+            // } else {
+            //     return num2;
+            // }
+            return num1 > num2 ? num1 : num2;
+
+        }
+        console.log(getMax(1, 5));
+        console.log(getMax(14, 5));
+
+
+        function getArrMax(arr) {
+            var max = arr[0];
+            for (var i = 0; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        // getArrMax([12, 45, 8, 32, 60]);
+        // console.log(getArrMax([12, 45, 8, 32, 60]));
+        var re = getArrMax([12, 45, 8, 32, 60, 82]);
+        console.log(re);
+
+        function getNumMax() {
+            var mx = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (arguments[i] > mx) {
+                    mx = arguments[i];
+                }
+            }
+            return mx;
+        }
+        console.log(getNumMax(52, 23, 12, 6, 42, 70))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

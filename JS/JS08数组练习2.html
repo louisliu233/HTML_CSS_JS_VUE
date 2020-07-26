@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 方法一
+        var arr = [2, 0, , 12, 45, 32, 15, 6, 9];
+        var newarr = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newarr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newarr);
+        // 方法二
+        var arr = [2, 0, , 12, 45, 32, 15, 6, 9];
+        var newarr = [];
+        // var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newarr[newarr.length] = arr[i];
+                // j++;
+            }
+        }
+        console.log(newarr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
