@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'osasodferosdowero';
+        var index = str.indexOf('o');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = str.indexOf('o', index + 1);
+        }
+        console.log('o出现的次数是：' + num);
+
+        function chse(arr) {
+            var index1 = arr.indexOf('o');
+            var num1 = 0;
+            while (index1 !== -1) {
+                console.log(index1);
+                num1++;
+                index1 = arr.indexOf('o', index1 + 1);
+
+            }
+            console.log('o出现的次数是：' + num1);
+            return index1;
+        }
+        var demo = chse(['s', 'a', 'o', 'w', 'o', 't', 'o', 'i']);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
