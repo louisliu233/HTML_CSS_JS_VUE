@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        border-bottom: 1px solid #ccc;
+        margin: 100px auto;
+      }
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+      }
+      .box img {
+        position: absolute;
+        top: 6px;
+        right: 2px;
+        width: 24px;
+        height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <button>
+      提交
+    </button>
+    <input type="text" value="输入内容" />
+    <script>
+      var btn = document.querySelector("button");
+      var input = document.querySelector("input");
+      btn.onclick = function () {
+        // 如果想要某个表单被禁用 不能再点击 disabled 我们想要这个按钮button禁用
+        // btn.disabled = true;
+        // this指向事件函数的调用者 btn
+        this.disabled = true;
+        // 表单里面的值 文字内容是通过value来修改的
+        input.value = "被点击了";
+      };
+    </script>
+
+    <div class="box">
+      <label for="">
+        <img src="images/close.png" alt="" id="eye" />
+      </label>
+      <input type="password" name="" id="pwd" />
+    </div>
+    <script>
+      var eye = document.getElementById("eye");
+      var pwd = document.getElementById("pwd");
+      var flag = 0;
+      eye.onclick = function () {
+        if (flag == 0) {
+          pwd.type = "text";
+          eye.src = "images/open.png";
+          flag = 1;
+        } else {
+          pwd.type = "password";
+          eye.src = "images/close.png";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>
