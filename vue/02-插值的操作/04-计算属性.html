@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<h2>{{fullName}}</h2>
+			<h2>{{addPrice}}</h2>
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					firstname: "lebrn",
+					lastname: "james",
+					books: [
+						{ id: 1, price: 120 },
+						{ id: 2, price: 112 },
+						{ id: 3, price: 102 },
+						{ id: 5, price: 98 },
+					],
+				},
+				computed: {
+					fullName: function () {
+						return this.firstname + " " + this.lastname;
+					},
+					addPrice: function () {
+						let allPrice = 0;
+						for (i = 0; i < this.books.length; i++) {
+							allPrice += this.books[i].price;
+						}
+						return allPrice;
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
