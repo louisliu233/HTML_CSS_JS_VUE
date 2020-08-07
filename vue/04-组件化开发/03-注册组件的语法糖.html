@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 3.使用组件 -->
+			<cpn1></cpn1>
+			<cpn2></cpn2>
+		</div>
+
+		<script src="../vue.js"></script>
+		<script>
+			//注册组件的语法糖
+			Vue.component(`cpn1`, {
+				template: ` <div> 
+                    <h2>我是标题1</h2>
+                    <p>哈哈哈</p>
+                    <p>就是这么神奇啊</p>
+                    </div>`,
+			});
+
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: "你好啊",
+					name: "why",
+				},
+				//2.注册局部组件的语法糖
+				components: {
+					cpn2: {
+						template: ` <div> 
+                    <h2>我是标题2</h2>
+                    <p>哈哈哈</p>
+                    <p>就是这么神奇啊</p>
+                    </div>`,
+					},
+				},
+			});
+		</script>
+	</body>
+</html>

@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			.cred {
+			.active {
 				color: red;
 			}
 		</style>
@@ -13,8 +13,13 @@
 	<body>
 		<div id="app">
 			<ul>
-				<li v-for="(m,index) in movies">{{m}}</li>
-				<li @click="cred" :class="cred()">点击我</li>
+				<li
+					v-for="(m,index) in movies"
+					:class="{active: currentIndex === index}"
+					@click="liclick(index)"
+				>
+					{{m}}
+				</li>
 			</ul>
 		</div>
 		<script src="../vue.js"></script>
@@ -22,14 +27,12 @@
 			const app = new Vue({
 				el: "#app",
 				data: {
-					message: "你好啊",
-					name: "why",
 					movies: ["火影忍者", "海贼王", "进击的巨人", "海王"],
-					intance: false,
+					currentIndex: 0,
 				},
 				methods: {
-					cred: function () {
-						tnis.intance = !this.intance;
+					liclick(index) {
+						this.currentIndex = index;
 					},
 				},
 			});

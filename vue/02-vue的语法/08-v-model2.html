@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<label for="agree"> <input type="checkbox" id="agree" v-model="isAgree" />同意协议 </label>
+			<button :disabled="!isAgree">下一步</button>
+
+			<select name="abc" id="" v-model="frults">
+				<option value="苹果">苹果</option>
+				<option value="香蕉">香蕉</option>
+				<option value="榴莲">榴莲</option>
+				<option value="葡萄">葡萄</option>
+			</select>
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: "你好啊",
+					name: "why",
+					isAgree: false,
+					frults: "葡萄",
+				},
+			});
+		</script>
+	</body>
+</html>

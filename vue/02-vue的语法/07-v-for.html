@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in message">{{item}}--{{index}}</li>
+				<li v-for="(key,value) in info">{{key}}--{{value}}</li>
+			</ul>
+		</div>
+		<script src="../vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: ["你好啊", "在哪里", "就在这", "哈哈"],
+					name: "why",
+					info: {
+						name: "louis",
+						age: 18,
+						length: 1.88,
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
