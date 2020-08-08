@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+			<cpn></cpn>
+			<cpn ref="aa"></cpn>
+			<button @click="btnclick">按钮</button>
+		</div>
+
+		<template id="cpn">
+			<div>
+				我是子组件1
+				<ccpn></ccpn>
+			</div>
+		</template>
+
+		<template id="ccpn">
+			<div>
+				我是子组件2
+				<button @click="btnClick">子按钮</button>
+			</div>
+		</template>
+
+		<script src="../vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: "你好啊",
+					name: "why",
+				},
+				methods: {
+					btnclick() {
+						//1. $children获得的是所有的子组件
+						console.log(this.$children);
+						//2. $refs可以指定哪个子组件,默认是一个空对象，必须在组件上加一个ref的属性
+						console.log(this.$refs.aa.name);
+					},
+				},
+				components: {
+					cpn: {
+						template: "#cpn",
+
+						data() {
+							return {
+								name: "我是子组件的名字",
+							};
+						},
+						components: {
+							ccpn: {
+								template: "#ccpn",
+								methods: {
+									btnClick() {
+										//访问父组件(组件cpn)里的name
+										console.log(this.$parent.name);
+										//访问根组件(vue实例)的name
+										console.log(this.$root.name);
+									},
+								},
+							},
+						},
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
