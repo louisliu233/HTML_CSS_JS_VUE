@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<cpn>
+				<template v-slot:fir="slotPropos">
+					<span>{{slotPropos.abb.join(' - ') }}</span><br />
+					<span>{{slotPropos.data.join(' - ') }}</span>
+				</template>
+			</cpn>
+		</div>
+
+		<template id="cpn">
+			<div>
+				<slot name="fir" :data="clanguages" :abb="names">
+					<ui>
+						<li v-for="item1 in clanguages">{{item1}}</li>
+						<li v-for="item2 in names">{{item2}}</li>
+					</ui>
+				</slot>
+			</div>
+		</template>
+		<script src="../vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: "你好啊",
+					name: "why",
+				},
+				components: {
+					cpn: {
+						template: "#cpn",
+						data() {
+							return {
+								clanguages: ["javascript", "c++", "java", "Go"],
+								names: ["louis", "coco", "stber", "alisar"],
+							};
+						},
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
