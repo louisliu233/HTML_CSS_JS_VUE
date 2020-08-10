@@ -6,7 +6,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name:'About',
+  created() {
+      console.log("About created");
+    },
+    destroyed() {
+      console.log("About created");
+    },
+    activated(){
+      console.log('activated')
+    }
+    
+};
 </script>
 
 <style>

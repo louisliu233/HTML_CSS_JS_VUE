@@ -9,12 +9,24 @@
 <script>
 export default {
   name: "User",
+  //   data() {
+  //   return {
+  //     userId: "louis",
+  //   };
+  // },
   computed: {
     userId() {
       //谁处于活跃状态获取用户id
       return this.$route.params.userId;
     },
+    
   },
+  created() {
+      console.log("User created");
+    },
+    destroyed() {
+      console.log("User destroyed");
+    },
 };
 </script>
 
